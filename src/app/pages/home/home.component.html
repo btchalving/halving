@@ -1,0 +1,13 @@
+<section>
+  <btc-hero-section></btc-hero-section>
+</section>
+<section class="skills">
+  <btc-skills [fromHome]="true"></btc-skills>
+  <btc-project
+    [fromHome]="true"
+    [isMobile]="(isMobile$ | async)!"
+  ></btc-project>
+</section>
+<section>
+  <btc-services-section></btc-services-section>
+</section>

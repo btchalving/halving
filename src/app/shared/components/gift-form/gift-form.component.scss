@@ -1,0 +1,172 @@
+@import "src/styles/variables/variables.scss";
+.form {
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  max-width: 37.5rem;
+  margin: auto;
+  @include mobile {
+    padding: 0 1rem;
+  }
+  &-info {
+    &__label {
+      color: $title;
+      text-align: center;
+      font-size: 1.125rem;
+      margin: 1rem 0;
+      @include custom-small-desktop {
+        font-size: 1rem;
+      }
+    }
+    &__data {
+      border: 1px solid $primary;
+      padding: 1rem;
+      border-radius: 5px;
+      &__text {
+        color: $title;
+        font-size: 1.125rem;
+        margin: 1rem 0;
+        position: relative;
+        @include mobile {
+          font-size: 0.85rem;
+        }
+        .address {
+          display: flex;
+          column-gap: 1rem;
+          position: relative;
+          align-items: center;
+          margin-top: 1rem;
+          @include mobile {
+            column-gap: 0.5rem;
+            font-size: 0.85rem;
+          }
+          p {
+            font-weight: bolder;
+          }
+          i {
+            border: 1px solid $primary;
+            padding: 0.25rem;
+            cursor: pointer;
+            color: $primary;
+            border-radius: 5px;
+            font-size: 14px;
+            &:hover {
+              background: rgba(100, 255, 218, 0.1);
+            }
+          }
+          .copied-alert {
+            position: absolute;
+            top: -8px;
+            left: 20%;
+            background: 0;
+            background: $title;
+            border-radius: 5px;
+            color: $dark;
+            padding: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: bolder;
+          }
+        }
+        .destination {
+          margin-top: 1rem;
+          input {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            height: 42px;
+            padding: 0.6875rem 0.75rem;
+            font-weight: "normal";
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #d3d6db;
+            font-size: 14px;
+            margin-top: 0.5rem;
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+            &::placeholder {
+              color: #d6d6d6;
+              font-size: 14px;
+            }
+          }
+          &-button {
+            width: 200px;
+            border: 1px solid $primary;
+            background: transparent;
+            padding: 1rem;
+            color: $primary;
+            border-radius: 3rem;
+            margin: 1.5rem 0 0 0;
+            cursor: pointer;
+            display: block;
+            &:hover {
+              background: rgba(100, 255, 218, 0.1);
+            }
+            @include mobile {
+              align-self: center;
+            }
+            &:disabled {
+              cursor: not-allowed;
+              border: 1px solid $secondary;
+              background: transparent;
+              color: #fff;
+              background: $secondary;
+              opacity: 0.5;
+            }
+          }
+          &__saved {
+            font-weight: bolder;
+            color: $primary;
+            border: 1px dashed $primary;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            &.completed {
+              font-size: 1.125rem;
+            }
+            @include mobile {
+              line-height: 1.25rem;
+              text-align: center;
+            }
+          }
+          .image-saved {
+            max-width: 250px;
+            display: block;
+            margin: 1.5rem 0;
+          }
+          .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            span {
+              color: $primary;
+              border-radius: 4px;
+              border: 1px solid $primary;
+              height: 54px;
+              display: grid;
+              place-content: center;
+              grid-template-columns: 1fr 0.2fr;
+              column-gap: 1rem;
+              padding: 0.75rem;
+            }
+            input[type="file"] {
+              position: absolute;
+              font-size: 100px;
+              right: 0;
+              top: 0;
+              opacity: 0;
+              margin-top: 0;
+              height: 54px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

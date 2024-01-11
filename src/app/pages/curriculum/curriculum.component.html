@@ -1,0 +1,59 @@
+<ng-container
+  *ngIf="{ language: language$ | async, isMobile: isMobile$ | async } as info"
+>
+  <div class="curriculum__header">
+    <div class="curriculum__header-top">
+      <div class="curriculum__header-top__box">
+        <h1
+          *ngIf="!info.isMobile"
+          class="curriculum__header-personal__name animate__animated animate__fadeInDown"
+        >
+          {{ formattedTime }}
+        </h1>
+        <btc-profile-image
+          [fromGift]="true"
+          class="animate__animated animate__pulse"
+        ></btc-profile-image>
+        <h3
+          *ngIf="info.isMobile"
+          class="curriculum__header-personal__position animate__animated animate__fadeInDown"
+        >
+          {{ position[info.language!] }}
+        </h3>
+        <div class="curriculum__header-personal__action">
+          <button
+            class="curriculum__header-personal__action-button"
+            [disabled]="isButtonDisabled"
+            (click)="claimGift()"
+          >
+            {{ buttonText[info.language!] }}
+          </button>
+        </div>
+      </div>
+      <h1
+        *ngIf="info.isMobile"
+        class="curriculum__header-personal__name animate__animated animate__fadeInDown"
+      >
+        {{ formattedTime }}
+      </h1>
+      <video
+        class="curriculum__header-personal__video"
+        [src]="videoUrl"
+        [autoplay]="true"
+        [loop]="false"
+        controls
+        [muted]="false"
+      ></video>
+    </div>
+
+    <div class="curriculum__header-personal">
+      <h3
+        *ngIf="!info.isMobile"
+        class="curriculum__header-personal__position animate__animated animate__fadeInDown"
+      >
+        {{ position[info.language!] }}
+      </h3>
+    </div>
+    <btc-gift-form></btc-gift-form>
+  </div>
+</ng-container>

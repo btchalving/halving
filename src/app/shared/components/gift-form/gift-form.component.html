@@ -1,0 +1,95 @@
+<ng-container *ngIf="{ language: language$ | async } as info">
+  <div class="form" [ngClass]="{ disabled: !(promotionAvailable$ | async) }">
+    <div class="form-info">
+      <h4 class="form-info__label" *ngIf="promotionAvailable$ | async">
+        {{ formIntroduction[info.language!] }}
+      </h4>
+      <h4 class="form-info__label" *ngIf="!(promotionAvailable$ | async)">
+        {{ promotionFinished[info.language!] }}
+      </h4>
+      <div class="form-info__data">
+        <div class="form-info__data__text">
+          <div class="address">
+            <p>{{ network[info.language!] }}</p>
+          </div>
+        </div>
+        <div class="form-info__data__text">
+          <p>{{ formInfo[info.language!] }} :</p>
+          <div class="address">
+            <p>{{ walletAddress }}</p>
+            <i class="far fa-copy" (click)="copyToClipboard()"></i>
+            <span class="copied-alert" *ngIf="copiedAlert$ | async">{{
+              copiedMessage[info.language!]
+            }}</span>
+          </div>
+          <div class="destination" *ngIf="savedWallet.length > 0">
+            <p>{{ destinationInfo[info.language!] }} :</p>
+            <div class="destination__saved">
+              {{ yourSavedWallet[info.language!] }}{{ savedWallet }}
+            </div>
+          </div>
+          <form
+            *ngIf="savedWallet.length == 0"
+            class="destination"
+            (ngSubmit)="OnSubmit()"
+            [formGroup]="walletInput"
+          >
+            <p>{{ destinationInfo[info.language!] }} :</p>
+            <input
+              type="text"
+              [placeholder]="walletAddress + '...'"
+              class="form-control"
+              formControlName="walletAddress"
+              name="walletAddress"
+            />
+            <button
+              class="destination-button"
+              [disabled]="walletInput.get('walletAddress')?.invalid"
+              type="submit"
+            >
+              {{ saveDestination[info.language!] }}
+            </button>
+          </form>
+          <form
+            *ngIf="savedWallet.length > 0"
+            class="destination"
+            (submit)="saveImage()"
+          >
+            <p>{{ uploadInformation[info.language!] }} :</p>
+            <div class="file-upload" *ngIf="!(imageSaved$ | async)">
+              <input
+                class="form-control"
+                type="file"
+                (change)="loadImage($event)"
+                accept="image/*"
+              />
+              <span
+                >{{ uploadButton[info.language!] }}
+                <i class="fa-solid fa-upload"></i
+              ></span>
+            </div>
+            <img
+              *ngIf="loadedImage"
+              [src]="loadedImage"
+              alt="Loaded Image"
+              class="image-saved"
+            />
+            <button
+              type="submit"
+              class="destination-button"
+              *ngIf="!(imageSaved$ | async)"
+            >
+              {{ saveReceipt[info.language!] }}
+            </button>
+            <div
+              class="destination__saved completed"
+              *ngIf="imageSaved$ | async"
+            >
+              {{ completedInformation[info.language!] }}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

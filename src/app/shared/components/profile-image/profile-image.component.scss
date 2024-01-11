@@ -1,0 +1,29 @@
+@import "src/styles/variables/variables.scss";
+@import "src/styles/mixins/mixins.scss";
+
+.container__img {
+  border-radius: 50%;
+  border: 0.25rem solid $primary;
+  width: 350px;
+  height: 350px;
+  display: grid;
+  place-content: center;
+  @include backgroundEffect;
+  @include custom-desktop {
+    width: 300px;
+    height: 300px;
+  }
+  @include mobile {
+    width: 250px;
+    height: 250px;
+    margin: 1rem auto;
+  }
+  img {
+    width: 150px;
+    height: auto;
+    border: 0.5rem solid transparent;
+    @include mobile {
+      width: 100px;
+    }
+  }
+}
