@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "btc-halving",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,10 +9,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build",
-    "dev:ssr": "ng run portfolio:serve-ssr",
-    "serve:ssr": "node dist/portfolio/server/main.js",
-    "build:ssr": "ng build --prod && ng run portfolio:server:production",
-    "prerender": "ng run portfolio:prerender"
+    "dev:ssr": "ng run btc-halving:serve-ssr",
+    "serve:ssr": "node dist/btc-halving/server/main.js",
+    "build:ssr": "ng build --prod && ng run btc-halving:server:production",
+    "prerender": "ng run btc-halving:prerender"
   },
   "private": true,
   "dependencies": {
