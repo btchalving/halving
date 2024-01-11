@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "portfolio": {
+    "btc-halving": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/portfolio/browser",
+            "outputPath": "dist/btc-halving/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -93,18 +93,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "portfolio:build"
+            "browserTarget": "btc-halving:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "portfolio:build:production"
+              "browserTarget": "btc-halving:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "portfolio:build"
+            "browserTarget": "btc-halving:build"
           }
         },
         "test": {
@@ -135,18 +135,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "portfolio:serve"
+            "devServerTarget": "btc-halving:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "portfolio:serve:production"
+              "devServerTarget": "btc-halving:serve:production"
             }
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/portfolio/server",
+            "outputPath": "dist/btc-halving/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -167,21 +167,21 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "portfolio:build",
-            "serverTarget": "portfolio:server"
+            "browserTarget": "btc-halving:build",
+            "serverTarget": "btc-halving:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "portfolio:build:production",
-              "serverTarget": "portfolio:server:production"
+              "browserTarget": "btc-halving:build:production",
+              "serverTarget": "btc-halving:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "portfolio:build:production",
-            "serverTarget": "portfolio:server:production",
+            "browserTarget": "btc-halving:build:production",
+            "serverTarget": "btc-halving:server:production",
             "routes": ["/"]
           },
           "configurations": {
@@ -191,5 +191,5 @@
       }
     }
   },
-  "defaultProject": "portfolio"
+  "defaultProject": "btc-halving"
 }

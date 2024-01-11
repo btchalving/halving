@@ -5,27 +5,21 @@ import { LoadingService } from './services/loading.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'btc-halving';
 
-  constructor(
-    private router: Router,
-    private loadingService: LoadingService
-    ){}
+  constructor(private router: Router, private loadingService: LoadingService) {}
 
   ngOnInit(): void {
-
-    this.router.events.subscribe(
-    event => {
-      if(event instanceof NavigationStart){
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
         this.loadingService.showSpinner();
       }
-      if(event instanceof NavigationEnd){
+      if (event instanceof NavigationEnd) {
         this.loadingService.hideSpinner();
       }
-    })
-
+    });
   }
 }

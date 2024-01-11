@@ -1,7 +1,7 @@
 [build]
   command = "npm run build:ssr"
-  publish = "dist/portfolio/browser"
-  functions = "dist/portfolio/server/main.js"
+  publish = "dist/btc-halving/browser"
+  functions = "dist/btc-halving/server/main.js"
 [[redirects]]
   from = "/*"
   to = "/index.html"
