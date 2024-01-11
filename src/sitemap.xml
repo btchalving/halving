@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://www.btc-halving.render.com/</loc>
+        <loc>https://www.btc-halving.onrender.com/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.btc-halving.render.com/resources</loc>
+        <loc>https://www.btc-halving.onrender.com/resources</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.btc-halving.render.com/gift</loc>
+        <loc>https://www.btc-halving.onrender.com/gift</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
